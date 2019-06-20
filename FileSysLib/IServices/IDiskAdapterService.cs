@@ -18,13 +18,13 @@ namespace FileSysLib.IServices {
         /// 写入磁盘i节点
         /// </summary>
         /// <param name="diskInode">磁盘i节点对象</param>
-        void WriteDiskInode(DiskInode diskInode);
+        void WriteDiskInode(DiskInode diskInode, int index);
 
         /// <summary>
         /// 写入普通数据块
         /// </summary>
         /// <param name="dataBlock"></param>
-        void WriteDataBlock(DataBlock dataBlock);
+        void WriteDataBlock(DataBlock dataBlock, int index);
 
         /// <summary>
         /// 读取超级块
