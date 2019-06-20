@@ -2,7 +2,7 @@
 // See documentation : https://github.com/nunit/docs/wiki/NUnit-Documentation
 using NUnit.Framework;
 
-namespace CardsForMemoryTest {
+namespace FileSysTest {
     [TestFixture]
     public class TestClass
     {
