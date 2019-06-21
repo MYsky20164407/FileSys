@@ -7,6 +7,6 @@ namespace FileSysLib.Models {
         public int Number;
         public int Mode; //类型：文件/目录
         public int Size; //文件大小
-        public int[] Addrs = new int[Constant.Constant.Naddr]; //i节点指向数据块
+        public List<int> Addrs; //i节点指向数据块
     }
 }
