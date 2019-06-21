@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace FileSysLib.Models {
-    class DiskInode {
+    public class DiskInode {
         public int Number;
         public int Mode; //类型：文件/目录
         public int Size; //文件大小

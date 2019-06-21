@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace FileSysLib.Models {
-    class SuperBlock {
+    public class SuperBlock {
         public int FreeBlockSize;
         public List<int> FreeBlock;
         public int FreeInodeSize;

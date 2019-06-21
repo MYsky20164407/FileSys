@@ -5,19 +5,19 @@ using System.Text;
 using FileSysLib.IServices;
 
 namespace FileSysLib.Services {
-    class DiskConnectService : IDiskConnectService {
-        private const string FileName = "Disk.txt";
+    public class DiskConnectService : IDiskConnectService {
+        private const string FileName = "C:\\Users\\ZJH\\Desktop\\Disk.txt";
 
         static DiskConnectService() {
             if (!File.Exists(FileName)) {
-                FileStream fileStream = new FileStream(FileName, FileMode.Create);
+                FileStream fileStream = new FileStream(FileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 //TODO 修改文件大小
                 fileStream.Close();
             }
         }
 
         public FileStream GetFileStream() {
-            throw new NotImplementedException();
+            return new FileStream(FileName, FileMode.Open, FileAccess.ReadWrite);
         }
     }
 }

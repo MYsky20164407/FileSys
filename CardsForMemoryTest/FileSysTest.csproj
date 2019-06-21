@@ -14,7 +14,6 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ServicesTest\" />
     <Folder Include="ViewModelTest\" />
   </ItemGroup>
   <ItemGroup>

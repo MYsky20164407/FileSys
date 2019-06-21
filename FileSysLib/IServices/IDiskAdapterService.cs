@@ -7,7 +7,7 @@ namespace FileSysLib.IServices {
     /// <summary>
     /// 提供磁盘读写服务，内含数据转换
     /// </summary>
-    interface IDiskAdapterService {
+    public interface IDiskAdapterService {
         /// <summary>
         /// 写入超级块
         /// </summary>

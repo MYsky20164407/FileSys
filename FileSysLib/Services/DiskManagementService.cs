@@ -4,7 +4,7 @@ using System.Text;
 using FileSysLib.IServices;
 
 namespace FileSysLib.Services {
-    class DiskManagementService : IDiskManagementService {
+    public class DiskManagementService : IDiskManagementService {
         public void GetFreeBlock() {
             throw new NotImplementedException();
         }

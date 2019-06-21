@@ -3,6 +3,6 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace FileSysLib.Models {
-    class MemInode {
+    public class MemInode {
     }
 }

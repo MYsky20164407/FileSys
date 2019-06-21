@@ -5,7 +5,7 @@ using FileSysLib.IServices;
 using FileSysLib.Models;
 
 namespace FileSysLib.Services {
-    class DiskAdapterService : IDiskAdapterService {
+    public class DiskAdapterService : IDiskAdapterService {
         public void WriteSuperBlock(SuperBlock superblock) {
             throw new NotImplementedException();
         }
