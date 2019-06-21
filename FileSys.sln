@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSys", "FileSys\FileSys.csproj", "{325768FC-442B-4FCD-85D9-A97B366CE0ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSysLib", "FileSysLib\FileSysLib.csproj", "{830F55EF-8085-4C6B-A126-FB6D3AE1A51E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileSysLib", "FileSysLib\FileSysLib.csproj", "{830F55EF-8085-4C6B-A126-FB6D3AE1A51E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{325768FC-442B-4FCD-85D9-A97B366CE0ED}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{325768FC-442B-4FCD-85D9-A97B366CE0ED}.Debug|Any CPU.Build.0 = Debug|x86
+		{325768FC-442B-4FCD-85D9-A97B366CE0ED}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{325768FC-442B-4FCD-85D9-A97B366CE0ED}.Debug|ARM.ActiveCfg = Debug|ARM
 		{325768FC-442B-4FCD-85D9-A97B366CE0ED}.Debug|ARM.Build.0 = Debug|ARM
 		{325768FC-442B-4FCD-85D9-A97B366CE0ED}.Debug|ARM.Deploy.0 = Debug|ARM
