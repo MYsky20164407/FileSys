@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace FileSysLib.Constant {
-    class Constant {
+    public class Constant {
         public const int Blocksize = 512;  //块大小
         public const int Sysopenfile = 40; //系统打开文件表最大项数
         public const int Dirnum = 128;     //每个目录最大包含目录项数

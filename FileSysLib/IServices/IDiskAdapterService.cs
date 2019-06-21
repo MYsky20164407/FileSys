@@ -12,7 +12,7 @@ namespace FileSysLib.IServices {
         /// 写入超级块
         /// </summary>
         /// <param name="superblock">超级块对象</param>
-        void WriteSuperBlock(SuperBlock superblock);
+        void WriteSuperBlock(SuperBlock superBlock);
 
         /// <summary>
         /// 写入磁盘i节点

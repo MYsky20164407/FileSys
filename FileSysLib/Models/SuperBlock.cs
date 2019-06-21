@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace FileSysLib.Models {
+    [Serializable]
     public class SuperBlock {
-        public int FreeBlockSize;
-        public List<int> FreeBlock;
-        public int FreeInodeSize;
-        public List<int> FreeInode;
+        public int FreeBlockSize { get; set; }
+        public List<int> FreeBlock { get; set; }
+        public int FreeInodeSize { get; set; }
+        public List<int> FreeInode { get; set; }
     }
 }
