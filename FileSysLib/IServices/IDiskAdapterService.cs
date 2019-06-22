@@ -24,7 +24,7 @@ namespace FileSysLib.IServices {
         /// 写入普通数据块
         /// </summary>
         /// <param name="dataBlock"></param>
-        void WriteDataBlock(DataBlock dataBlock, int index);
+        void WriteDataBlock(DataBlock dataBlock, int index, DataMode mode);
 
         /// <summary>
         /// 读取超级块
@@ -34,11 +34,11 @@ namespace FileSysLib.IServices {
         /// <summary>
         /// 读取i节点
         /// </summary>
-        DiskInode ReaDiskInode(int index);
+        DiskInode ReadDiskInode(int inodeIndex);
 
         /// <summary>
         /// 读取数据块
         /// </summary>
-        DataBlock ReaDataBlock(int index);
+        DataBlock ReadDataBlock(int index, DataMode mode);
     }
 }
