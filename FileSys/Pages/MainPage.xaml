@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="FileSys.Pages.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FileSys.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <NavigationView x:Name="nvAll" IsSettingsVisible="true" IsTabStop="False" Header="This is header text." ItemInvoked="nvAll_ItemInvoked">
+        <NavigationView.MenuItems>
+            <NavigationViewItemHeader Content="操作系统"/>
+            <NavigationViewItem Icon="Play"  Content="进程" Tag="ProgressPage" />
+            <NavigationViewItem Icon="Save" Content="磁盘占用" Tag="MemoryPage" />
+            <NavigationViewItem Icon="People" Content="账户" Tag="AccountPage" />
+        </NavigationView.MenuItems>
+        <NavigationView.AutoSuggestBox>
+            <AutoSuggestBox x:Name="ASB" PlaceholderText="Search" QueryIcon="Find" TextChanged="AutoSuggestBox_TextChanged" QuerySubmitted="AutoSuggestBox_QuerySubmitted" SuggestionChosen="AutoSuggestBox_SuggestionChosen"/>
+        </NavigationView.AutoSuggestBox>
+        <Frame x:Name="contentFrame">
+            <TextBox Text="欢迎来到操作系统！" FontSize="50"></TextBox>
+            
+        </Frame>
+    </NavigationView>
+</Page>
