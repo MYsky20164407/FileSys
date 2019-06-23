@@ -154,5 +154,40 @@ namespace FileSysLib.Services {
             }
             return dataBlock;
         }
+
+        public void Format() {
+            int count = 1;
+            List<int> blockList = new List<int>();
+            blockList.Add(Constant.Constant.Nicfreeblk - 1);
+            blockList.Add(-1);
+            for (int i = 40954; i >= 0; i--) {
+                if (count == Constant.Constant.Nicfreeblk) {
+                    DataBlock dataBlock = new DataBlock() {
+                        GroupMode = blockList
+                    };
+                    WriteDataBlock(dataBlock, i, DataMode.Group);
+                    count = 1;
+                    blockList.Clear();
+                    if (i >= Constant.Constant.Nicfreeblk) {
+                        blockList.Add(Constant.Constant.Nicfreeblk);
+                    }
+                    blockList.Add(i);
+                }
+                else {
+                    blockList.Add(i);
+                    count++;
+                }
+            }
+            List<int> initInodeList = new List<int>();
+            for(int j = 1; j < Constant.Constant.Dinodeblk; j++)
+                initInodeList.Add(j);
+            SuperBlock superBlock = new SuperBlock() {
+                FreeBlockSize = count,
+                FreeBlock = blockList,
+                FreeInodeSize = Constant.Constant.Dinodeblk,
+                FreeInode = initInodeList
+            };
+            WriteSuperBlock(superBlock);
+        }
     }
 }

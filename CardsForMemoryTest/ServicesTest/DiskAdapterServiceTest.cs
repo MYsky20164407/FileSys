@@ -69,6 +69,33 @@ namespace FileSysTest.ServicesTest {
             for(int i = 0; i < Constant.Blocksize; i++)
                 Assert.AreEqual(reDataBlock.Bytes[i], dataBlock.Bytes[i]);
         }
+
+        [Test]
+        public void WriteReadGroupTest() {
+            DataBlock dataBlock = new DataBlock() {
+                Bytes = new List<byte>(),
+                GroupMode = new List<int>(){1, 2, 3, 4}
+            };
+            DiskAdapterService diskAdapterService = new DiskAdapterService(_diskConnectService);
+            diskAdapterService.WriteDataBlock(dataBlock, 3, DataMode.Group);
+            var reDataBlock = diskAdapterService.ReadDataBlock(3, DataMode.Group);
+
+            for (int i = 0; i < 4; i++)
+                Assert.AreEqual(reDataBlock.GroupMode[i], dataBlock.GroupMode[i]);
+        }
+
+        [Test]
+        public void FormatTest() {
+            DiskAdapterService diskAdapterService = new DiskAdapterService(_diskConnectService);
+            diskAdapterService.Format();
+
+            SuperBlock superBlock = diskAdapterService.ReadSuperBlock();
+            Assert.AreEqual(6, superBlock.FreeBlockSize);
+            Assert.AreEqual(5, superBlock.FreeBlock[0]);
+            DataBlock dataBlock = diskAdapterService.ReadDataBlock(5, DataMode.Group);
+            for(int i = 1; i < 51; i++)
+                Assert.AreEqual(56 - i, dataBlock.GroupMode[i]);
+        }
     }
 
 }

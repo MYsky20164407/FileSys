@@ -11,7 +11,7 @@ namespace FileSysLib.Services {
         static DiskConnectService() {
             if (!File.Exists(FileName)) {
                 FileStream fileStream = new FileStream(FileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-                //TODO 修改文件大小
+                //TODO 格式化
                 byte[] bytes = new byte[20 * 1024 * 1024];
                 fileStream.Write(bytes, 0, bytes.Length);
                 fileStream.Close();

@@ -40,5 +40,10 @@ namespace FileSysLib.IServices {
         /// 读取数据块
         /// </summary>
         DataBlock ReadDataBlock(int index, DataMode mode);
+
+        /// <summary>
+        /// 格式化磁盘
+        /// </summary>
+        void Format();
     }
 }
