@@ -99,7 +99,8 @@
     <Compile Include="Pages\AccountPage.xaml.cs">
       <DependentUpon>AccountPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FileResourceManager.xaml.cs">
+    <Compile Include="Pages\FileResourceManager\Converter.cs" />
+    <Compile Include="Pages\FileResourceManager\FileResourceManager.xaml.cs">
       <DependentUpon>FileResourceManager.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\HomePage.xaml.cs">
@@ -145,7 +146,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\FileResourceManager.xaml">
+    <Page Include="Pages\FileResourceManager\FileResourceManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -184,6 +185,12 @@
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FileSysLib\FileSysLib.csproj">
+      <Project>{e71ce10a-5b26-41cd-b0f4-02010169ac3d}</Project>
+      <Name>FileSysLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

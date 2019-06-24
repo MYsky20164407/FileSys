@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using FileSys.Locator;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -22,6 +23,11 @@ namespace FileSys.Pages {
     public sealed partial class FileResourceManager : Page {
         public FileResourceManager() {
             this.InitializeComponent();
+            DataContext = ViewModelLocator.Instance.FrontEndViewModel;
+        }
+
+        private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e) {
+            throw new NotImplementedException();
         }
     }
 }
