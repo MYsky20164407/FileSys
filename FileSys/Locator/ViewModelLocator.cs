@@ -16,7 +16,7 @@ namespace FileSys.Locator {
         /// <summary>
         ///     私有构造
         /// </summary>
-        private ViewModelLocator() {        
+        private ViewModelLocator() {     
         }
 
     }

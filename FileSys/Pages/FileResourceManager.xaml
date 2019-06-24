@@ -1,0 +1,86 @@
+﻿<Page
+    x:Class="FileSys.Pages.FileResourceManager"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FileSys.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <Style TargetType="TextBlock" x:Key="list">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Width" Value="140" />
+        </Style>
+    </Page.Resources>
+    <Grid Background="DarkGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="11*"></ColumnDefinition>
+            <ColumnDefinition Width="40*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="9*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="30*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!--按钮-->
+        <StackPanel Orientation="Horizontal" 
+                    Grid.Row="0" Grid.ColumnSpan="2"
+                    Background="White"
+                    BorderThickness="0,0,0,2"
+                    BorderBrush="Gainsboro">
+            <Button Content="->"></Button>
+            <Button Content="文件夹操作"></Button>
+            <Button Content="文件操作"></Button>
+        </StackPanel>
+        <!--日志-->
+        <StackPanel Grid.Row="3" Grid.Column="0"
+                    Background="Blue"
+                    Margin="0,0,0,20"
+                    BorderThickness="0,0,2,1"
+                    BorderBrush="Gainsboro">
+            <TextBlock></TextBlock>
+        </StackPanel>
+        <!--菜单-->
+        <StackPanel Orientation="Vertical" 
+                    Grid.Row="2" Grid.Column="1"
+                    Background="White"
+                    BorderThickness="0,0,0,2"
+                    BorderBrush="Gainsboro">
+            <TextBlock >C：>user>zjh</TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" 
+                    Grid.Row="3" Grid.Column="1"
+                    Margin="0,0,0,20"
+                    Background="White"
+                    BorderThickness="0,0,0,1"
+                    BorderBrush="Gainsboro">
+            <!--<ListView Grid.RowSpan="6" ItemsSource="{x:Bind vm.Cards,Mode=OneWay}"
+                      IsMultiSelectCheckBoxEnabled="False" SelectionChanged="ListViewSelectionChanged">
+                --><!--列表头部--><!--
+                <ListView.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource list}">问题</TextBlock>
+                        <TextBlock Style="{StaticResource list}">答案</TextBlock>
+                        <TextBlock Style="{StaticResource list}">上次学习</TextBlock>
+                    </StackPanel>
+                </ListView.Header>
+                --><!--列表模板--><!--
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="lib:Card">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource list}"
+                                       Text="{x:Bind Question,Mode=OneWay}" />
+                            <TextBlock Style="{StaticResource list}" Text="{x:Bind Answer,Mode=OneWay}" />
+                            <TextBlock Style="{StaticResource list}"
+                                       Text="{x:Bind UpdateTime,Mode=OneWay,Converter={StaticResource DateTimeConverter}}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+        </StackPanel>
+
+    </Grid>
+</Page>
