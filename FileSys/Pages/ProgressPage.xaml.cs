@@ -44,5 +44,15 @@ namespace FileSys.Pages {
             }
             LogGrid.ItemsSource = z;
         }
+
+        private void Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e) {
+            this.Frame.Navigate(typeof(RountProgress));
+
+        }
+
+        private void Button_Click1(object sender, Windows.UI.Xaml.RoutedEventArgs e) {
+            this.Frame.Navigate(typeof(SecurityPage));
+
+        }
     }
 }

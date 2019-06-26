@@ -10,11 +10,19 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+
         <TextBlock Text="超级块" FontSize="50" TextAlignment="Center" Grid.Column="0"></TextBlock>
         <TextBlock Text="组长块" FontSize="50" TextAlignment="Center" Grid.Column="1"></TextBlock>
         <controls:DataGrid x:Name="SuperGrid"  Grid.Column="0" Margin="41,100,109,300" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" GridLinesVisibility="Horizontal" AlternatingRowBackground="LightGray" >
         </controls:DataGrid>
         <controls:DataGrid x:Name="DataGrid"  Grid.Column="1" Margin="75,100,75,300" GridLinesVisibility="Horizontal" AlternatingRowBackground="LightGray" />
+
+        <Button Content="点击去看缓存占比" FontSize="30" HorizontalAlignment="Left" Margin="118,630,0,0" VerticalAlignment="Top" 
+                Grid.Column="1" Click="Button_Click"/>
+        <Button Content="点击去看" FontSize="30" Margin="460,630,0,0" VerticalAlignment="Top" 
+                Grid.Column="1" Click="Button_Click1"/>
+
+
         <TextBlock Text="超级块日志：" FontSize="40" Margin="98,660,166,-100" ></TextBlock>
         <controls:DataGrid x:Name="LogGrid" Margin="98,741,166,-208" GridLinesVisibility="Horizontal" AlternatingRowBackground="LightGray" />
 

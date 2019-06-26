@@ -19,8 +19,12 @@
             <AutoSuggestBox x:Name="ASB" PlaceholderText="Search" QueryIcon="Find" TextChanged="AutoSuggestBox_TextChanged" QuerySubmitted="AutoSuggestBox_QuerySubmitted" SuggestionChosen="AutoSuggestBox_SuggestionChosen"/>
         </NavigationView.AutoSuggestBox>
         <Frame x:Name="contentFrame">
-            <TextBox Text="欢迎来到操作系统！" FontSize="50"></TextBox>
+            <TextBox Text="欢迎来到操作系统！" FontSize="50">
+                
+            </TextBox>
             
         </Frame>
+        
     </NavigationView>
+    
 </Page>

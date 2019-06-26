@@ -32,7 +32,7 @@ namespace FileSys.Pages {
             if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput) {
                 sender.ItemsSource = ReminderStrList.Where(i => i.Contains(sender.Text));
             }
-                contentFrame.Navigate(typeof(SettingPage));
+                
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace FileSys.Pages {
         private void nvAll_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args) {
             //先判断是否选中了setting
             if (args.IsSettingsInvoked) {
-                contentFrame.Navigate(typeof(SettingPage));
+                
             } else {
                 //选中项的内容
                 switch (args.InvokedItem) {
@@ -74,7 +74,7 @@ namespace FileSys.Pages {
                         contentFrame.Navigate(typeof(ProgressPage));
                         break;
                     case "磁盘占用":
-                        contentFrame.Navigate(typeof(MemoryPage));
+                        contentFrame.Navigate(typeof(RountProgress));
                         break;
                     case "账户":
                         contentFrame.Navigate(typeof(AccountPage));
