@@ -20,7 +20,7 @@
         <Button Content="点击去看缓存占比" FontSize="30" HorizontalAlignment="Left" Margin="118,630,0,0" VerticalAlignment="Top" 
                 Grid.Column="1" Click="Button_Click"/>
         <Button Content="点击去看" FontSize="30" Margin="460,630,0,0" VerticalAlignment="Top" 
-                Grid.Column="1" Click="Button_Click1"/>
+                Grid.Column="1" Click="Button_Click_1"/>
 
 
         <TextBlock Text="超级块日志：" FontSize="40" Margin="98,660,166,-100" ></TextBlock>

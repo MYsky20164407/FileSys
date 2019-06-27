@@ -96,7 +96,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Locator\ViewModelLocator.cs" />
-    <Compile Include="Pages\Account.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Round.cs" />
     <Compile Include="Pages\AccountPage.xaml.cs">
       <DependentUpon>AccountPage.xaml</DependentUpon>
     </Compile>

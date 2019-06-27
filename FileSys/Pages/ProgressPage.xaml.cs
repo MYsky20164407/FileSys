@@ -50,9 +50,10 @@ namespace FileSys.Pages {
 
         }
 
-        private void Button_Click1(object sender, Windows.UI.Xaml.RoutedEventArgs e) {
-            this.Frame.Navigate(typeof(SecurityPage));
+        
 
+        private void Button_Click_1(object sender, Windows.UI.Xaml.RoutedEventArgs e) {
+            this.Frame.Navigate(typeof(SecurityPage));
         }
     }
 }

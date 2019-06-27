@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using FileSys.Models;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -22,9 +23,11 @@ namespace FileSys.Pages
     /// </summary>
     public sealed partial class RountProgress : Page
     {
+        private Round Rounds;
         public RountProgress()
         {
             this.InitializeComponent();
+            Rounds = RoundManager.GetRound();
         }
     }
 }

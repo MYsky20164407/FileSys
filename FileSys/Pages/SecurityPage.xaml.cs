@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using FileSys.Models;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -22,16 +23,14 @@ namespace FileSys.Pages
     /// </summary>
     public sealed partial class SecurityPage : Page
     {
-        private List<Account> Accounts;
+        public List<Account> Accounts;
+        public AccountSetting Sample;
 
         public SecurityPage()
         {
             this.InitializeComponent();
             Accounts = AccountManager.GetAccounts();
+            Sample = AccountSettingManager.GetAccountSetting();
         }
-
-        //private void GridView_ItemClick(object sender, ItemClickEventArgs e) 
-            //{ var book = (Book)e.ClickedItem; ResultTextBlock.Text = "You selected " + book.Title; }
-
     }
 }

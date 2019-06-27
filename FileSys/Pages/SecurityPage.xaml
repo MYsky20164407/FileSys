@@ -5,34 +5,32 @@
     xmlns:local="using:FileSys.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:data="using:FileSys.Pages" 
+    xmlns:data="using:FileSys.Models" 
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     
+    
     <Page.Resources>
-        <!--横向布局-->
-        <ItemsPanelTemplate x:Key="HorizontalItemsPanelTemplate">
-            <VirtualizingStackPanel 
-                VerticalAlignment="Top"
-                ScrollViewer.HorizontalScrollMode="Enabled"
-                ScrollViewer.VerticalScrollMode="Disabled"/>
-        </ItemsPanelTemplate>
-
-        <DataTemplate x:DataType="data:Account" x:Key="BookListDataTemplate" >
-            <StackPanel  HorizontalAlignment="Left">
-                <Image Name="image" Source="{x:Bind CoverImage}" HorizontalAlignment="Center" Width="150" />
-                <StackPanel Margin="20,20,0,0">
-                    <TextBlock Text="{x:Bind Title}" HorizontalAlignment="Left" FontSize="16" />
-                    <TextBlock Text="{x:Bind Author}" HorizontalAlignment="Left" FontSize="10" />
-                </StackPanel>
+        <DataTemplate x:DataType="data:Account" x:Key="AccountDataTemplate">
+            
+                
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Width="80" FontSize="16" Text="{x:Bind Author}" />
+                <Image Width="50" Margin="450,0,6,8" Source="{x:Bind Yes}" />
+                <Image Width="50" Margin="550,0,6,8" Source="{x:Bind No}" />
             </StackPanel>
         </DataTemplate>
+
+        
+        
     </Page.Resources>
+
+    
 
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.8*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="1*"></RowDefinition>
@@ -40,12 +38,12 @@
 
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <TextBlock FontSize="50">对象名称:</TextBlock>
-            <TextBlock FontSize="50">C:/</TextBlock>
+            <TextBlock FontSize="50" Text="{x:Bind Sample.Objectnumber }"></TextBlock>
         </StackPanel>
 
         <StackPanel Grid.Row="1" >
             <TextBlock FontSize="25">组或者用户名:</TextBlock>
-            <ListView  Height="150" AllowDrop="True" BorderBrush="#FF6C6969" BorderThickness="5,5,5,5" IsSynchronizedWithCurrentItem="True">
+            <ListView  Height="150" AllowDrop="True" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -70,12 +68,22 @@
         </StackPanel>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <TextBlock FontSize="25">用户一</TextBlock>
+            <TextBlock FontSize="25" Text="{x:Bind Sample.Number }"></TextBlock>
             <TextBlock FontSize="25">权限:</TextBlock>
-            <TextBlock FontSize="25" Margin="300,0,6,8">允许</TextBlock>
-            <TextBlock FontSize="25" Margin="300,0,6,8">拒绝</TextBlock>
+            <TextBlock FontSize="25" Margin="420,0,6,8">允许</TextBlock>
+            <TextBlock FontSize="25" Margin="550,0,6,8">拒绝</TextBlock>
         </StackPanel>
-        
-        
+
+        <ListView Name="MyListView" Grid.Row="3" 
+                  
+                  ItemsSource="{x:Bind Accounts}"
+                  ItemTemplate="{StaticResource AccountDataTemplate}" />
+
     </Grid>
 </Page>
+
+
+
+
+
+

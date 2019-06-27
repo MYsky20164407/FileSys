@@ -18,43 +18,50 @@
             <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" FontSize="50">
-            本地磁盘C
-        </TextBlock>
-
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Rectangle Height="50" Width="50" Fill="Blue"/>
-            <TextBlock FontSize="30" VerticalAlignment="Center">已用空间：</TextBlock>
-            <TextBlock FontSize="30" VerticalAlignment="Center">123</TextBlock>
-            <TextBlock FontSize="30" VerticalAlignment="Center">字节</TextBlock>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock  FontSize="50"> 本地磁盘</TextBlock>
+            <TextBlock  FontSize="50" Text="{x:Bind Rounds.Object}"></TextBlock>
         </StackPanel>
+            
+           
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Rectangle Height="50" Width="50" Fill="Gray"/>
-            <TextBlock FontSize="30" VerticalAlignment="Center">未用空间：</TextBlock>
-            <TextBlock FontSize="30" VerticalAlignment="Center">123</TextBlock>
-            <TextBlock FontSize="30" VerticalAlignment="Center">字节</TextBlock>
-        </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <Rectangle Height="50" Width="50" Fill="Blue"/>
+                <TextBlock FontSize="30" VerticalAlignment="Center">已用空间：</TextBlock>
+                <TextBlock FontSize="30" VerticalAlignment="Center" Text="{x:Bind Rounds.Used}"></TextBlock>
+                <TextBlock FontSize="30" VerticalAlignment="Center">字节</TextBlock>
+            </StackPanel>
 
-        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBlock FontSize="30" VerticalAlignment="Center">磁盘总容量：</TextBlock>
-            <TextBlock FontSize="30" VerticalAlignment="Center">123</TextBlock>
-            <TextBlock FontSize="30" VerticalAlignment="Center">字节</TextBlock>
-        </StackPanel>
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                <Rectangle Height="50" Width="50" Fill="Gray"/>
+                <TextBlock FontSize="30" VerticalAlignment="Center">未用空间：</TextBlock>
+                <TextBlock FontSize="30" VerticalAlignment="Center" Text="{x:Bind Rounds.Notused}"></TextBlock>
+                <TextBlock FontSize="30" VerticalAlignment="Center">字节</TextBlock>
+            </StackPanel>
 
-        <Grid  Grid.Row="4" Width="200" Height="200">
-        <Ellipse Stroke="Gray" StrokeThickness="10"/>
-        <!-- Wow! -->
-        <Ellipse Stroke="DeepSkyBlue" StrokeThickness="10" StrokeDashArray="18,1000" RenderTransformOrigin="0.5,0.5">
-            <Ellipse.RenderTransform>
-                <RotateTransform Angle="-90"/>
-            </Ellipse.RenderTransform>
-        </Ellipse>
-        <TextBlock Foreground="Black" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center">30%</TextBlock>
-    </Grid>
+            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock FontSize="30" VerticalAlignment="Center">磁盘总容量：</TextBlock>
+                <TextBlock FontSize="30" VerticalAlignment="Center" Text="{x:Bind Rounds.All}"></TextBlock>
+                <TextBlock FontSize="30" VerticalAlignment="Center">字节</TextBlock>
+            </StackPanel>
 
-        <Grid Grid.Row="5">
-            <Button Content="关闭" FontSize="20" HorizontalAlignment="Left" Margin="1092,0,0,0" VerticalAlignment="Center"  ></Button>
-        </Grid>
+            <Grid  Grid.Row="4" Width="200" Height="200">
+                <Ellipse Stroke="Gray" StrokeThickness="10"/>
+                <!-- Wow! -->
+                <Ellipse Stroke="DeepSkyBlue" StrokeThickness="10" StrokeDashArray="{x:Bind Rounds.Percentage}" RenderTransformOrigin="0.5,0.5">
+                    <Ellipse.RenderTransform>
+                        <RotateTransform Angle="-90"/>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Foreground="Black" FontSize="50" Margin="60,2,2,2" VerticalAlignment="Center" Text="{x:Bind Rounds.Percentageshow}"></TextBlock>
+                <TextBlock Foreground="Black" FontSize="50" Margin="10,2,2,2" VerticalAlignment="Center" >%</TextBlock>
+            </StackPanel>
+            
+            </Grid>
+
+            <Grid Grid.Row="5">
+                <Button Content="关闭" FontSize="20" HorizontalAlignment="Left" Margin="1092,0,0,0" VerticalAlignment="Center"  ></Button>
+            </Grid>
     </Grid>
 </Page>
