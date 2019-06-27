@@ -16,8 +16,8 @@
                 
             <StackPanel Orientation="Horizontal">
                 <TextBlock Width="80" FontSize="16" Text="{x:Bind Author}" />
-                <Image Width="50" Margin="450,0,6,8" Source="{x:Bind Yes}" />
-                <Image Width="50" Margin="550,0,6,8" Source="{x:Bind No}" />
+                <Image Width="50" Margin="370,0,6,8" Source="{x:Bind Yes}" />
+                <Image Width="50" Margin="480,0,60,8" Source="{x:Bind No}" />
             </StackPanel>
         </DataTemplate>
 
@@ -43,7 +43,7 @@
 
         <StackPanel Grid.Row="1" >
             <TextBlock FontSize="25">组或者用户名:</TextBlock>
-            <ListView  Height="150" AllowDrop="True" >
+            <ListView  Height="150" AllowDrop="True" IsItemClickEnabled="True" ItemClick="ListView_ItemClick" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -68,10 +68,10 @@
         </StackPanel>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <TextBlock FontSize="25" Text="{x:Bind Sample.Number }"></TextBlock>
+            <TextBlock FontSize="25" Text="{Binding Number}"></TextBlock>
             <TextBlock FontSize="25">权限:</TextBlock>
-            <TextBlock FontSize="25" Margin="420,0,6,8">允许</TextBlock>
-            <TextBlock FontSize="25" Margin="550,0,6,8">拒绝</TextBlock>
+            <TextBlock Width="50" FontSize="25" Margin="400,0,6,8">允许</TextBlock>
+            <TextBlock Width="50" FontSize="25" Margin="500,0,60,8">拒绝</TextBlock>
         </StackPanel>
 
         <ListView Name="MyListView" Grid.Row="3" 

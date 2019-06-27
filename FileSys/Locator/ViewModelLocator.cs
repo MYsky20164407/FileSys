@@ -17,6 +17,7 @@ namespace FileSys.Locator {
         public static readonly ViewModelLocator Instance = new ViewModelLocator();
 
         public FrontEndViewModel FrontEndViewModel => SimpleIoc.Default.GetInstance<FrontEndViewModel>();
+        public AccountViewModel AccountViewModel => SimpleIoc.Default.GetInstance<AccountViewModel>();
 
         /// <summary>
         ///     私有构造
@@ -29,6 +30,9 @@ namespace FileSys.Locator {
             SimpleIoc.Default.Register<IMemManagementService, MemManagementService>();
 
             SimpleIoc.Default.Register<FrontEndViewModel>();
+            SimpleIoc.Default.Register<AccountViewModel>();
+
+
         }
 
     }
